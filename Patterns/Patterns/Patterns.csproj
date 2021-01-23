@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6C77DD9-617F-4C67-82EA-8D95B168D4B3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Patterns</RootNamespace>
+    <AssemblyName>Patterns</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behavioral\ChainOfResponsibility\AtmMachine.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote1.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote10.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote100.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote1000.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote2.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote20.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote200.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote5.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote50.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Banknotes\Banknote500.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\ChainUsage.cs" />
+    <Compile Include="Behavioral\ChainOfResponsibility\Leafs.cs" />
+    <Compile Include="Behavioral\Command\ArithmeticUnit.cs" />
+    <Compile Include="Behavioral\Command\Calculator.cs" />
+    <Compile Include="Behavioral\Command\Command.cs" />
+    <Compile Include="Behavioral\Command\Commands\Addition.cs" />
+    <Compile Include="Behavioral\Command\Commands\Division.cs" />
+    <Compile Include="Behavioral\Command\Commands\Multiplication.cs" />
+    <Compile Include="Behavioral\Command\Commands\Substract.cs" />
+    <Compile Include="Behavioral\Command\ControlUnit.cs" />
+    <Compile Include="Behavioral\Interpreter\BooleanExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\ConcreteExpressions\AndExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\ConcreteExpressions\NotExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\ConcreteExpressions\OrExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\Constant.cs" />
+    <Compile Include="Behavioral\Interpreter\Constants.cs" />
+    <Compile Include="Behavioral\Interpreter\Context.cs" />
+    <Compile Include="Behavioral\Interpreter\VariableExpression.cs" />
+    <Compile Include="Behavioral\Iterator\.NETRepresentation\Enumerable.cs" />
+    <Compile Include="Behavioral\Iterator\.NETRepresentation\Enumerator.cs" />
+    <Compile Include="Behavioral\Iterator\.NETRepresentation\IEnumerable.cs" />
+    <Compile Include="Behavioral\Iterator\.NETRepresentation\IEnumerator.cs" />
+    <Compile Include="Behavioral\Iterator\ClassicRepresentation\ConcreteCollection.cs" />
+    <Compile Include="Behavioral\Iterator\ClassicRepresentation\ConcreteIterator.cs" />
+    <Compile Include="Behavioral\Iterator\ClassicRepresentation\IIterator.cs" />
+    <Compile Include="Behavioral\Iterator\ClassicRepresentation\IterableCollection.cs" />
+    <Compile Include="Behavioral\Mediator\ConceptualExample\Colleague.cs" />
+    <Compile Include="Behavioral\Mediator\ConceptualExample\ConcreteColleagues\Farmer.cs" />
+    <Compile Include="Behavioral\Mediator\ConceptualExample\ConcreteColleagues\Shop.cs" />
+    <Compile Include="Behavioral\Mediator\ConceptualExample\ConcreteMediator.cs" />
+    <Compile Include="Behavioral\Mediator\ConceptualExample\Mediator.cs" />
+    <Compile Include="Behavioral\Mediator\GUIExample\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Behavioral\Mediator\GUIExample\MainForm.Designer.cs" />
+    <Compile Include="Behavioral\Mediator\GUIExample\Mediator.cs" />
+    <Compile Include="Behavioral\Memento\Caretaker.cs" />
+    <Compile Include="Behavioral\Memento\Interfaces\INarrowMemento.cs" />
+    <Compile Include="Behavioral\Memento\Interfaces\IWideMemento.cs" />
+    <Compile Include="Behavioral\Memento\Memento.cs" />
+    <Compile Include="Behavioral\Memento\Originator.cs" />
+    <Compile Include="Behavioral\Observer\ConcreteObservers\DigitalClock.cs" />
+    <Compile Include="Behavioral\Observer\ConcreteSubjects\ClockTimer.cs" />
+    <Compile Include="Behavioral\Observer\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Behavioral\Observer\MainForm.Designer.cs" />
+    <Compile Include="Behavioral\Observer\Observer.cs" />
+    <Compile Include="Behavioral\Observer\Subject.cs" />
+    <Compile Include="Behavioral\State\ConcreteStates\PhoneOff.cs" />
+    <Compile Include="Behavioral\State\ConcreteStates\PhoneOn.cs" />
+    <Compile Include="Behavioral\State\Phone.cs" />
+    <Compile Include="Behavioral\State\Power.cs" />
+    <Compile Include="Behavioral\State\State.cs" />
+    <Compile Include="Behavioral\Strategy\Context.cs" />
+    <Compile Include="Behavioral\Strategy\Interfaces\IPrint.cs" />
+    <Compile Include="Behavioral\Strategy\Interfaces\ISort.cs" />
+    <Compile Include="Behavioral\Strategy\IPrintStrategies\PrintDirectOrder.cs" />
+    <Compile Include="Behavioral\Strategy\IPrintStrategies\PrintReverseOrder.cs" />
+    <Compile Include="Behavioral\Strategy\ISortStrategies\BubbleSort.cs" />
+    <Compile Include="Behavioral\Strategy\ISortStrategies\InsertionSort.cs" />
+    <Compile Include="Behavioral\Strategy\ISortStrategies\SelectionSort.cs" />
+    <Compile Include="Behavioral\TemplateMethod\ConcreteClasses\MonacoFlag.cs" />
+    <Compile Include="Behavioral\TemplateMethod\ConcreteClasses\PolandFlag.cs" />
+    <Compile Include="Behavioral\TemplateMethod\ConcreteClasses\UkraineFlag.cs" />
+    <Compile Include="Behavioral\TemplateMethod\TwoColorFlag.cs" />
+    <Compile Include="Behavioral\Visitor\ConcreteElements\Books.cs" />
+    <Compile Include="Behavioral\Visitor\ConcreteElements\Magazines.cs" />
+    <Compile Include="Behavioral\Visitor\ConcreteVisitors\ConcreteVisitor.cs" />
+    <Compile Include="Behavioral\Visitor\Element.cs" />
+    <Compile Include="Behavioral\Visitor\IVisitor.cs" />
+    <Compile Include="Behavioral\Visitor\Library.cs" />
+    <Compile Include="Creational\AbstractFactory\Abstract\AbstractButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Creational\AbstractFactory\Abstract\AbstractWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creational\AbstractFactory\Abstract\WidgetFactory.cs" />
+    <Compile Include="Creational\AbstractFactory\Buttons\LeopardButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Creational\AbstractFactory\Buttons\WindowsButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Creational\AbstractFactory\Client.cs" />
+    <Compile Include="Creational\AbstractFactory\Factories\LeopardFactory.cs" />
+    <Compile Include="Creational\AbstractFactory\Factories\WindowsFactory.cs" />
+    <Compile Include="Creational\AbstractFactory\Windows\LeopardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creational\AbstractFactory\Windows\WindowsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creational\Builder\Converter.cs" />
+    <Compile Include="Creational\Builder\Converters\PdfConverter.cs" />
+    <Compile Include="Creational\Builder\Converters\TxtConverter.cs" />
+    <Compile Include="Creational\Builder\Converters\XpsConverter.cs" />
+    <Compile Include="Creational\Builder\RtfReader.cs" />
+    <Compile Include="Creational\FactoryMethod\Locator\IServiceLocator.cs" />
+    <Compile Include="Creational\FactoryMethod\Locator\ServiceLocator.cs" />
+    <Compile Include="Creational\FactoryMethod\Services\IServices\IServiceFirst.cs" />
+    <Compile Include="Creational\FactoryMethod\Services\IServices\IServiceSecond.cs" />
+    <Compile Include="Creational\FactoryMethod\Services\ServiceA.cs" />
+    <Compile Include="Creational\FactoryMethod\Services\ServiceB.cs" />
+    <Compile Include="Creational\FactoryMethod\Services\ServiceC.cs" />
+    <Compile Include="Creational\FactoryMethod\Services\ServiceD.cs" />
+    <Compile Include="Creational\Prototype\Circle.cs" />
+    <Compile Include="Creational\Prototype\PrototypeShape.cs" />
+    <Compile Include="Creational\Prototype\Rectangle.cs" />
+    <Compile Include="Creational\Singleton\DatabaseInitializer.cs" />
+    <Compile Include="Creational\Singleton\Player.cs" />
+    <Compile Include="Creational\Singleton\Singleton.cs" />
+    <Compile Include="Creational\Singleton\Team.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structural\Adapter\Adapter.cs" />
+    <Compile Include="Structural\Adapter\FahrenheitSensor.cs" />
+    <Compile Include="Structural\Adapter\Sensor.cs" />
+    <Compile Include="Structural\Bridge\AbstractionRepresentatives\MacOsForm.cs" />
+    <Compile Include="Structural\Bridge\AbstractionRepresentatives\WindowsOsForm.cs" />
+    <Compile Include="Structural\Bridge\Implementors\MacOSImplementor.cs" />
+    <Compile Include="Structural\Bridge\Implementors\WindowsOSImplementor.cs" />
+    <Compile Include="Structural\Bridge\Window.cs" />
+    <Compile Include="Structural\Bridge\WindowImplementor.cs" />
+    <Compile Include="Structural\Composite\Component.cs" />
+    <Compile Include="Structural\Composite\Composite.cs" />
+    <Compile Include="Structural\Composite\Leaf.cs" />
+    <Compile Include="Structural\Decorator\Component.cs" />
+    <Compile Include="Structural\Decorator\ConcreteComponent.cs" />
+    <Compile Include="Structural\Decorator\ConcreteWrappers\BoldTag.cs" />
+    <Compile Include="Structural\Decorator\ConcreteWrappers\ItalicTag.cs" />
+    <Compile Include="Structural\Decorator\Decorator.cs" />
+    <Compile Include="Structural\Facade\AssemblerScriptChecker\Parser.cs" />
+    <Compile Include="Structural\Facade\AssemblerScriptChecker\Scanner.cs" />
+    <Compile Include="Structural\Facade\AssemblerScriptChecker\SharedTypes.cs" />
+    <Compile Include="Structural\Facade\AssemblerScriptChecker\Token.cs" />
+    <Compile Include="Structural\Facade\Exceptions\ParserException.cs" />
+    <Compile Include="Structural\Facade\ScriptChecker.cs" />
+    <Compile Include="Structural\Flyweight\Actor.cs" />
+    <Compile Include="Structural\Flyweight\EvilRole.cs" />
+    <Compile Include="Structural\Flyweight\Flyweight.cs" />
+    <Compile Include="Structural\Flyweight\HeroRole.cs" />
+    <Compile Include="Structural\Proxy\ProtectionProxy\Proxy.cs" />
+    <Compile Include="Structural\Proxy\ProtectionProxy\RealOperator.cs" />
+    <Compile Include="Structural\Proxy\ProtectionProxy\Subject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Behavioral\ChainOfResponsibility\README.md" />
+    <None Include="Behavioral\Command\README.md" />
+    <None Include="Behavioral\Interpreter\README.md" />
+    <None Include="Behavioral\Iterator\README.md" />
+    <None Include="Behavioral\Mediator\README.md" />
+    <None Include="Behavioral\Memento\README.md" />
+    <None Include="Behavioral\Observer\README.md" />
+    <None Include="Behavioral\State\README.md" />
+    <None Include="Behavioral\Strategy\README.md" />
+    <None Include="Behavioral\TemplateMethod\README.md" />
+    <None Include="Behavioral\Visitor\README.md" />
+    <None Include="Creational\AbstractFactory\README.md" />
+    <None Include="Creational\Builder\README.md" />
+    <None Include="Creational\FactoryMethod\README.md" />
+    <None Include="Creational\Prototype\README.md" />
+    <None Include="Creational\Singleton\README.md" />
+    <None Include="packages.config" />
+    <None Include="Structural\Adapter\README.md" />
+    <None Include="Structural\Bridge\README.md" />
+    <None Include="Structural\Composite\README.md" />
+    <None Include="Structural\Decorator\README.md" />
+    <None Include="Structural\Facade\README.md" />
+    <None Include="Structural\Flyweight\README.md" />
+    <None Include="Structural\Proxy\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Behavioral\Observer\MainForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\AbstractFactory%28Bridge%29Example.jpg" />
+    <Content Include="images\DemonstrationObserver.gif" />
+    <Content Include="images\EntityDesignerDiagram.bmp" />
+    <Content Include="images\MealyMachine%28State%29.jpg" />
+    <Content Include="images\MediatorExample.jpg" />
+    <Content Include="images\MooreMachine%28State%29.jpg" />
+    <Content Include="images\TemplateExample.jpg" />
+    <Content Include="images\UmlClassDiagram.NETIterator.jpg" />
+    <Content Include="images\UmlClassDiagramAbstractFactory.jpg" />
+    <Content Include="images\UmlClassDiagramAdapter.jpg" />
+    <Content Include="images\UmlClassDiagramBridge.jpg" />
+    <Content Include="images\UmlClassDiagramBuilder.jpg" />
+    <Content Include="images\UmlClassDiagramChainOfResponsibility.jpg" />
+    <Content Include="images\UmlClassDiagramClassicIterator.jpg" />
+    <Content Include="images\UmlClassDiagramCommand.jpg" />
+    <Content Include="images\UmlClassDiagramComposite.jpg" />
+    <Content Include="images\UmlClassDiagramConceptualMediator.jpg" />
+    <Content Include="images\UmlClassDiagramDecorator.jpg" />
+    <Content Include="images\UmlClassDiagramFacade.jpg" />
+    <Content Include="images\UmlClassDiagramFactoryMethod.jpg" />
+    <Content Include="images\UmlClassDiagramFlyweight.jpg" />
+    <Content Include="images\UmlClassDiagramGUIMediator.jpg" />
+    <Content Include="images\UmlClassDiagramInterpreter.jpg" />
+    <Content Include="images\UmlClassDiagramMemento.jpg" />
+    <Content Include="images\UmlClassDiagramObserver.jpg" />
+    <Content Include="images\UmlClassDiagramProtectionProxy.jpg" />
+    <Content Include="images\UmlClassDiagramPrototype.jpg" />
+    <Content Include="images\UmlClassDiagramSingleton.jpg" />
+    <Content Include="images\UmlClassDiagramState.jpg" />
+    <Content Include="images\UmlClassDiagramStrategy.jpg" />
+    <Content Include="images\UmlClassDiagramTemplateMethod.jpg" />
+    <Content Include="images\UmlClassDiagramVisitor.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
